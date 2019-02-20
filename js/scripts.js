@@ -7,8 +7,6 @@ $("#blanks form").submit(function(event) {
   var startTimeInput = $("input#start-time").val();
   var endTimeInput = $("input#end-time").val();
 
-
-
     $(".person").text(personInput);
     $(".address").text(addressInput);
     $(".date").text(dateInput);
@@ -17,7 +15,10 @@ $("#blanks form").submit(function(event) {
 
     $("#confirmation").show();
     $("#blanks").hide();
-
+    $("form").submit(function(e){
+                    alert('submit intercepted');
+                    e.preventDefault(e);
+                });
 
 });
 });
